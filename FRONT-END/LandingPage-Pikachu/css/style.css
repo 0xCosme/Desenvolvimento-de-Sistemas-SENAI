@@ -1,0 +1,162 @@
+:root{
+    /* definindo variaveis globais */
+    --primary-color:   #F5CF06;
+    --secundary-color: #8E4106;
+}
+body{
+    height: 100vh;
+    background-color: var(--primary-color);
+    padding: 70px;
+    font-family: Righteous, sans-serif;
+
+
+    display: flex;
+    flex-direction: column;
+}
+header{
+    /* alinhar */
+    display: flex;
+    align-items: center;
+    /* espacamento */
+    gap: 16px;
+}
+header span{
+    font-size: 32px;
+    color: var(--secundary-color);
+
+}
+main{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+.sombra {
+    position: absolute;
+    font-size: 26vw;
+    color: #ffffff55;
+    z-index: -999;
+
+    /* centralizar algo que seja position absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+}
+
+
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22vw;
+    flex-grow: 1;
+    font-size: 20vw;
+    color: white;    
+
+}
+.container{
+    height: 154px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 64px;
+    align-items: flex-end;
+    
+}
+.descricao h2{
+    font-size: 64px;
+    color: var(--secundary-color);
+}
+.descricao p{
+    font-size: 20px;
+    color: var(--secundary-color);
+    width: 500px;
+}
+.container a{
+    width: 400px;
+    height: 100px;
+    background-color: var(--secundary-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: white;
+
+
+}
+
+.pikachu {
+    position: absolute;
+    /* centralizar algo que seja position absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+}
+
+footer{
+    text-align: center;
+    color: var(--secundary-color);
+}
+
+
+
+
+
+/* tabelet */
+@media (max-width:768px) {
+    body{
+        padding: 30px;
+
+    }
+    .sombra{
+        transform: translate(-50%, -180%);
+
+    }
+
+    main{
+        justify-content: space-between;
+    }
+    h1{
+        align-items: start;
+        transform: translatey(10%);
+        /* flex-grow: 0.0; */
+    }
+    .container{
+        flex-direction: column;
+        align-items: center;
+        height: auto; 
+        padding: 0;
+    }
+    .descricao{
+        text-align: center;
+    }
+    footer{
+        display: none;
+    }
+
+
+}
+
+/* Celular */
+@media (max-width:480px) {
+    .descricao h2{
+        font-size: 34px;
+    }
+    .descricao p{
+        display: none;
+    }
+    .pikachu{
+        height: 50vh;
+    }
+    .container a {
+        width: 100%;
+    }
+    .sombra{
+        transform: translate(-50%, -100%);
+
+    }
+}

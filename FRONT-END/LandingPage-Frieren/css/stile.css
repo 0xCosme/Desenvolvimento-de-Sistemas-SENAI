@@ -1,0 +1,123 @@
+/* No arquivo style.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* A imagem de fundo */
+    background-image: url('../imgs/Frieren.png'), linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(60, 60, 60, 0.6) 50%, rgba(255, 255, 255, 0.1) 100%);
+    background-size: cover;  /* Faz a imagem cobrir toda a tela */
+    background-repeat: no-repeat; /* Faz a imagem não se repetir */
+    
+    /* Gradiente */
+    background-blend-mode: overlay; /* Faz o gradiente se misturar com a imagem */
+    
+    margin: 0;
+    height: 100vh; /* 100% da altura da tela */
+    color: #fff; /* Cor do texto para se destacar no fundo escuro */
+}       
+
+header{
+    display: flex;
+    justify-content: flex-start;/*alinha horizontalmente*/
+    gap: 20px; /*espacamento entre os intens*/
+    color: aliceblue;
+    margin-top: 5px ;/*margen superior */
+    padding: 30px;
+}
+header p{
+    font-size: 30px;
+}
+
+
+main{
+    color: aliceblue;
+    width: 50%; Limita a largura para 50% da tela
+    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+    
+   
+}
+
+main h1{
+    font-size: 70px;
+    padding: 30px;
+
+    color: aliceblue;
+}
+
+main p{
+    font-size: 30px;
+    padding: 30px;
+
+    color: aliceblue;
+}
+
+
+
+/* .botoes{
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+    
+}
+.ler {
+    background-color: aliceblue;
+    color: black;
+    border: 1px solid black;
+    padding: 10px 20px;
+    cursor: pointer;
+} .ler p{
+    color: black;
+}
+.Assistir {
+    background-color: rgba(0, 0, 0, 0.144);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    padding: 10px 20px;
+    cursor: pointer;
+} */
+
+
+.botoes {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding:10px, 20px;
+    
+}
+
+.ler, .Assistir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px; /* Espaçamento entre imagem e texto */
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.ler {
+    background-color: aliceblue;
+    color: black;
+    border: 2px solid black;
+}
+
+.ler p {
+    color: black;
+}
+
+.Assistir {
+    background-color: rgba(0, 0, 0, 0.144);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.ler img, .Assistir img {
+    
+    width: 40px; /* Tamanho da imagem */
+    height: 40px; /* Tamanho da imagem */
+}
+

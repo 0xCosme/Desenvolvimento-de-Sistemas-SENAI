@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zelda Open Archive | Hyrule Compendium</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-black text-white">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center bg-zelda overflow-hidden">
+        <!-- Partículas Animadas -->
+        <div class="leaf left-[5%]" style="animation-duration:10s"></div>
+        <div class="leaf left-[15%]" style="animation-duration:15s"></div>
+        <div class="leaf left-[25%]" style="animation-duration:12s"></div>
+        <div class="leaf left-[40%]" style="animation-duration:14s"></div>
+        <div class="leaf left-[55%]" style="animation-duration:11s"></div>
+        <div class="leaf left-[70%]" style="animation-duration:13s"></div>
+        <div class="leaf left-[85%]" style="animation-duration:15s"></div>
+
+        <div class="absolute inset-0 overlay"></div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl fade-in">
+            <h1 class="text-5xl md:text-7xl tracking-widest font-bold mb-6">
+                Zelda Open Archive
+            </h1>
+            <p class="text-gray-300 leading-relaxed mb-10 text-lg">
+                Explore o vasto compêndio de Hyrule. Descubra criaturas, monstros, materiais e equipamentos do universo de Zelda.
+            </p>
+            <button id="explorarBtn" class="glass px-10 py-4 rounded-xl hover:scale-105 duration-300 font-semibold tracking-wide">
+                Iniciar Exploração
+            </button>
+        </div>
+    </section>
+
+    <!-- CATEGORIAS SECTION -->
+    <section id="categoriasSection" class="relative min-h-screen bg-zelda py-24">
+        <div class="absolute inset-0 overlay"></div>
+
+        <div class="relative z-10 container mx-auto px-5">
+            <!-- Barra de Pesquisa -->
+            <div class="flex justify-center mb-16">
+                <div class="relative w-full max-w-md">
+                    <input type="text" id="pesquisa" placeholder="Pesquisar item (ex: Master Sword)..." 
+                           class="glass w-full px-6 py-4 rounded-full outline-none text-sm placeholder:text-gray-400 focus:ring-2 focus:ring-green-500/50 transition-all">
+                </div>
+            </div>
+
+            <h2 class="text-4xl md:text-5xl text-center mb-16 tracking-wider font-light">Categorias</h2>
+
+            <!-- Grid de Categorias -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Equipamentos -->
+                <div class="categoria glass rounded-2xl overflow-hidden cursor-pointer group" data-category="equipment">
+                    <div class="overflow-hidden h-72">
+                        <img src="https://botw-compendium.herokuapp.com/api/v3/compendium/entry/master_sword/image" 
+                             alt="Equipamentos" class="w-full h-full object-cover group-hover:scale-110 duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-medium">Equipamentos</h3>
+                    </div>
+                </div>
+
+                <!-- Monstros -->
+                <div class="categoria glass rounded-2xl overflow-hidden cursor-pointer group" data-category="monsters">
+                    <div class="overflow-hidden h-72">
+                        <img src="https://botw-compendium.herokuapp.com/api/v3/compendium/entry/calamity_ganon/image" 
+                             alt="Monstros" class="w-full h-full object-cover group-hover:scale-110 duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-medium">Monstros</h3>
+                    </div>
+                </div>
+
+                <!-- Criaturas -->
+                <div class="categoria glass rounded-2xl overflow-hidden cursor-pointer group" data-category="creatures">
+                    <div class="overflow-hidden h-72">
+                        <img src="https://botw-compendium.herokuapp.com/api/v3/compendium/entry/blupee/image" 
+                             alt="Criaturas" class="w-full h-full object-cover group-hover:scale-110 duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-medium">Criaturas</h3>
+                    </div>
+                </div>
+
+                <!-- Materiais -->
+                <div class="categoria glass rounded-2xl overflow-hidden cursor-pointer group" data-category="materials">
+                    <div class="overflow-hidden h-72">
+                        <img src="https://botw-compendium.herokuapp.com/api/v3/compendium/entry/silent_princess/image" 
+                             alt="Materiais" class="w-full h-full object-cover group-hover:scale-110 duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-medium">Materiais</h3>
+                    </div>
+                </div>
+
+                <!-- Tesouros -->
+                <div class="categoria glass rounded-2xl overflow-hidden cursor-pointer group" data-category="treasure">
+                    <div class="overflow-hidden h-72">
+                        <img src="https://botw-compendium.herokuapp.com/api/v3/compendium/entry/treasure_chest/image" 
+                             alt="Tesouros" class="w-full h-full object-cover group-hover:scale-110 duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-medium">Tesouros</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LISTAGEM SECTION -->
+    <section id="listagemSection" class="hidden relative min-h-screen bg-zelda py-24">
+        <div class="absolute inset-0 overlay"></div>
+        <div class="relative z-10 container mx-auto px-5">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-14">
+                <h2 id="tituloCategoria" class="text-4xl md:text-5xl font-light">Categoria</h2>
+                <button id="voltarCategorias" class="glass px-8 py-3 rounded-xl hover:bg-white/10 transition-colors">
+                    Voltar para Categorias
+                </button>
+            </div>
+
+            <!-- Grid de Itens -->
+            <div id="itemsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Injetado via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DETALHES -->
+    <div id="modal" class="hidden fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="glass rounded-3xl max-w-5xl w-full overflow-hidden fade-in shadow-2xl">
+            <div class="grid lg:grid-cols-2">
+                <img id="modalImage" src="" alt="" class="w-full h-72 lg:h-full object-cover">
+                
+                <div class="p-8 overflow-y-auto max-h-[80vh] lg:max-h-[90vh]">
+                    <div class="flex items-center justify-between mb-8">
+                        <h2 id="modalTitle" class="text-3xl md:text-4xl capitalize font-bold tracking-tight"></h2>
+                        <button id="fecharModal" class="text-3xl hover:text-gray-400 transition-colors" aria-label="Fechar Modal">✕</button>
+                    </div>
+                    <div id="modalContent" class="space-y-6 text-gray-300 text-lg leading-relaxed">
+                        <!-- Injetado via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts Modulares -->
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

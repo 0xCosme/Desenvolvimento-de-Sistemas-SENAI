@@ -1,0 +1,119 @@
+/* 
+ * Zelda Open Archive - Styles
+ * Foco em estética moderna, performance e legibilidade.
+ */
+
+:root {
+    --zelda-green: #5aff78;
+    --zelda-green-glow: rgba(90, 255, 120, 0.9);
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.10);
+    --overlay-bg: rgba(0, 0, 0, 0.72);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    overflow-x: hidden;
+    background: #000;
+    color: #fff;
+    margin: 0;
+}
+
+/* Background Zelda com Efeito Parallax */
+.bg-zelda {
+    background-image: url('https://s2-techtudo.glbimg.com/jdjWaj2zZqwfy54WMxknQy3TDtw=/0x0:695x428/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/j/N/976TlDTUKRFMQbmhs5Kw/2017-03-03-screen-shot-2017-03-03-at-2.37.33-pm.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.overlay {
+    background: var(--overlay-bg);
+    backdrop-filter: blur(4px);
+}
+
+/* Efeito Glassmorphism */
+.glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass:hover {
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.1);
+}
+
+/* Animações */
+.fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Partículas (Folhas Brilhantes) */
+.leaf {
+    position: absolute;
+    bottom: -120px;
+    width: 24px;
+    height: 24px;
+    background: radial-gradient(circle, rgba(140, 255, 170, 1) 0%, var(--zelda-green-glow) 40%, rgba(90, 255, 120, 0.1) 100%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    filter: blur(0.5px) drop-shadow(0 0 10px var(--zelda-green-glow)) drop-shadow(0 0 25px rgba(120, 255, 150, 0.7));
+    animation: leafFloat linear infinite;
+    pointer-events: none;
+}
+
+@keyframes leafFloat {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-60vh) rotate(180deg) scale(1.1);
+    }
+    100% {
+        transform: translateY(-120vh) rotate(360deg) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Utilitários */
+.hidden {
+    display: none !important;
+}

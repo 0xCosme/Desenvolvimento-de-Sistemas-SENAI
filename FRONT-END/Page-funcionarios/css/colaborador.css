@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+
+}
+
+a{
+    text-decoration: none;
+
+}
+body{
+    gap: 10%;
+}
+
+header{
+    background-color:cornflowerblue ;
+    font-size: 34px;
+
+
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    gap:  4%;
+}
+
+
+
+main{
+
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
+ul{
+    font-size: 40px;
+
+}
+h2{
+    font-size: 40px;
+}
